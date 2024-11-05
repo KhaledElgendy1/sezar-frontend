@@ -9,19 +9,34 @@ import Header from "../../Components/header/Header";
 export default function SearchBookings() {
   const [clientId, setClientId] = useState("");
   const [bookings, setBookings] = useState([]);
+  const [loading, setLoading] = useState(false);
   const bookingsRef = useRef(null);
 
   const apiUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
 
   const handleSearch = async (event) => {
     event.preventDefault();
-    try {
-      const response = await axios.get(`${apiUrl}/api/bookings/${clientId}`);
+    if (!clientId) {
+      alert("يرجى إدخال رقم العميل");
+      return;
+    }
 
-      setBookings(response.data);
+    setLoading(true);
+    try {
+      const response = await axios.get(`${apiUrl}/api/bookings`, {
+        params: { clientId }, 
+      });
+
+      if (response.data.length === 0) {
+        alert("لا توجد رحلات للعميل المحدد");
+      } else {
+        setBookings(response.data);
+      }
     } catch (error) {
-      alert("فشل في استرجاع الرحلات");
+      alert("فشل في استرجاع الرحلات: " + (error.response ? error.response.data.message : error.message));
       console.log(error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -68,8 +83,8 @@ export default function SearchBookings() {
               onChange={(e) => setClientId(e.target.value)}
               className="input-field"
             />
-            <button type="submit" className="search-button">
-              استعلام
+            <button type="submit" className="search-button" disabled={loading}>
+              {loading ? "جاري التحميل..." : "استعلام"}
             </button>
           </form>
 
@@ -116,7 +131,7 @@ export default function SearchBookings() {
                       <strong>موقع الوصول:</strong> {booking.dropoffLocation}
                     </div>
                     <div>
-                      <strong>شامل الرجوع:</strong> {booking.returnIncluded}
+                      <strong>شامل الرجوع:</strong> {booking.returnIncluded ? "نعم" : "لا"}
                     </div>
                     <div>
                       <strong>التكلفة:</strong> {booking.cost} ج.م
