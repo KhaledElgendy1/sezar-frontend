@@ -77,8 +77,10 @@ export default function AddBooking() {
     console.log("Ordered data being sent:", payload);
 
     try {
-      await axios.post(`${apiUrl}/api/bookings`, payload);
-
+      const response = await axios.post(
+        `https://sezar-travel-backend.vercel.app/api/bookings`,
+        payload
+      );
       alert("تمت إضافة الطلب بنجاح");
       setFormData({
         ...initialState,
