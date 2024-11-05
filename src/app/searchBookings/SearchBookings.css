@@ -1,0 +1,229 @@
+.page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100% - 80px);
+  width: 100%;
+  padding: 20px;
+  position: relative;
+}
+
+.container {
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 16px;
+  box-shadow: 0px 12px 28px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+h1 {
+  color: #2f484c;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+button {
+  background: linear-gradient(135deg, #2f484c, #507e86);
+  color: #ffffff;
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  width: 100%;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #507e86, #2f484c);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+}
+
+.bookings-list {
+  width: 100%;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.username-container {
+  margin-bottom: 15px;
+}
+
+.username {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2f484c;
+  border-bottom: 2px solid #507e86; 
+  padding-bottom: 5px;
+}
+
+.cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; 
+}
+
+.booking-card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.booking-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.booking-card h3 {
+  color: #507e86;
+}
+
+.booking-card div {
+  margin-top: 5px;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.booking-card strong {
+  color: #2f484c; 
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 30px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+.logo {
+  width: 280px; 
+  height: 100px; 
+}
+
+.share-button {
+  margin-top: 15px;
+}
+
+.booking-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border-left: 5px solid #2f484c;
+}
+
+.booking-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.booking-card h3 {
+  color: #2f484c;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.booking-card div {
+  margin-top: 8px;
+  font-size: 0.95rem;
+  color: #444;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.booking-card strong {
+  color: #2f484c;
+  font-weight: 600;
+}
+
+.booking-card div span {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.bookings-list {
+  width: 100%;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f4f6f8;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.username-container {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.username {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #2f484c;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #507e86;
+}
+
+.cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.share-button {
+  margin-top: 20px;
+  background: #2f484c;
+  color: #ffffff;
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.share-button:hover {
+  background: #507e86;
+  transform: translateY(-3px);
+}

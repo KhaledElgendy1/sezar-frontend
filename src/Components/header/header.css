@@ -1,0 +1,39 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(12px);
+  padding: 20px 30px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  margin: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.header-item {
+  color: #2f484c;
+  text-decoration: none;
+  font-size: 1.5rem; 
+  font-weight: 600;
+  transition: color 0.3s ease, transform 0.2s ease; 
+  cursor: pointer; 
+  text-decoration: none;
+}
+
+.header-item:hover {
+  color: #1e5b8b; 
+  transform: translateY(-2px); 
+}
+
+.header-nav {
+  display: flex; 
+  gap: 30px; 
+}
+
+@media (max-width: 600px) {
+  .header-item {
+    font-size: 1.2rem; 
+  }
+}
